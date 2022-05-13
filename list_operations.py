@@ -119,7 +119,7 @@ def inner_four_end(input_list):
 
     """
 
-    return input_list[4:-2]
+    return input_list[-6:-2]
 
 
 def replace_head(input_list):
@@ -152,10 +152,9 @@ def replace_third_and_last(input_list):
 
     """
 
-    # input_list[2, -1] = 37 this returns a tupule - they want integer or slice
+    # input_list[2, -1] = 37 this returns a tupule - they want integer or slice - can only change one index at a time - by writing is like we did it thinks of [2, -1] as a pair
     input_list[2] = 37
     input_list[-1] = 37 
-   
 
 
 def replace_middle(input_list):

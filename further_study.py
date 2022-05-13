@@ -1,5 +1,6 @@
 """Custom implementations of several standard Python list methods."""
 
+from re import A
 from list_operations import *
 
 
@@ -15,8 +16,11 @@ def custom_len(input_list):
         8
 
     """
+    list_len = 0
 
-    return 0
+    for item in input_list:
+        list_len= list_len + 1
+    return list_len
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -44,8 +48,11 @@ def custom_append(input_list, value):
 
     """
 
-    pass
+    
 
+    list_length = custom_len(input_list)
+    input_list[list_length:list_length] = [value]
+    
 
 def custom_extend(input_list, second_list):
     """Append every item in second_list to input_list.
@@ -62,8 +69,10 @@ def custom_extend(input_list, second_list):
         True
 
     """
+    list_length = custom_len(input_list)
+    input_list[list_length:] = second_list
 
-    pass
+
 
 
 def custom_insert(input_list, index, value):
@@ -80,8 +89,12 @@ def custom_insert(input_list, index, value):
         True
 
     """
+   
+    input_list[index:index] = [value]
 
-    pass
+    # pass
+
+
 
 
 def custom_remove(input_list, value):
@@ -99,9 +112,14 @@ def custom_remove(input_list, value):
         True
 
     """
+    counter = 0
 
-    pass
+    for i in input_list:
+        if i == value:
+            input_list[counter:counter + 1] = []
+            break
 
+        counter += 1
 
 def custom_pop(input_list):
     """Remove the last item in the list and returns it.
